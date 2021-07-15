@@ -1,0 +1,92 @@
+<!-- Parallax Header -->
+<section id="img-contact" class="parallax"></section>
+<!-- Physical Address -->
+<section class="container-fluid bg-primary" style="padding-bottom:1rem;">
+	<h1 class="text-center">CONTACT US</h1>
+	<hr />
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d114597.5966606586!2d27.72466967828828!3d-26.158432960061827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x1e959884f728dbbf%3A0x12554c94fe3d26a8!2smsdc+inc!3m2!1d-26.158449899999997!2d27.79471!5e0!3m2!1sen!2sza!4v1508216394797" height="500" frameborder="0" style="border:0" allowfullscreen width="100%"></iframe>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 lead" id="details">
+			<p>
+				<address>
+					9050 Lebogang Crescent<br />
+					Reservoir Ridge<br />
+					Krugersdorp<br />
+					1754<br />
+					Gauteng<br />
+				</address>
+				<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:client.service@msdc.co.za">Send us an Email</a>
+				<br />
+				<strong>Graphic Design &amp; Branding:</strong><br />
+				<a href="mailto:graphic@msdc.co.za">graphic@msdc.co.za</a> <br />
+				<a href="mailto:branding@msdc.co.za">branding@msdc.co.za</a><br />
+				<strong>Web Design &amp; Development:</strong><br />
+				<a href="mailto:web@msdc.co.za">web@msdc.co.za</a>
+			</p>
+		</div>
+	</div>
+</section>
+<!-- The Form -->
+<section class="container" id="form">
+	<form id="contact-form">
+		<section class="row">
+			<h1 class="text-center">GET IN TOUCH</h1>
+			<hr />
+			<section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<fieldset>
+					<legend>Contact Info</legend>
+					<div class="group">
+						<input class="input" data-val="true" id="Name" name="Name" type="text" value="" />
+						<span class="bar"></span>
+						<label>Name</label>
+						<span class="text-danger" id="name-validation"></span>
+					</div>
+
+					<div class="group">
+						<input class="input"id="Email" name="Email" type="email" value="" />
+						<span class="bar"></span>
+						<label>Email</label>
+						<span class="text-danger" id="email-validation"></span>
+					</div>
+
+					<div class="group">
+						<input class="input" id="Phone" name="Phone" type="tel" value="" />
+						<span class="bar"></span>
+						<label>Phone</label>
+						<span class="text-danger" id="phone-validation"></span>
+					</div>
+
+					<div class="group">
+						<input class="input" id="Subject" name="Subject" type="text" value="" />
+						<span class="bar"></span>
+						<label>Subject</label>
+						<span class="text-danger" id="subject-validation"></span>
+					</div>
+				</fieldset>
+			</section>
+			<section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<fieldset>
+					<legend>The Message</legend>
+					<div class="group">
+						<textarea class="input" cols="20" id="Message" name="Message" rows="11">
+</textarea>
+						<span class="bar"></span>
+						<label>Message</label>
+						<span class="text-danger" id="message-validation"></span>
+					</div>
+				</fieldset>
+			</section>
+		</section>
+		<section class="text-center row">
+			<button type="submit" class="btn btn-sm btn-success" id="submit-btn">
+				<span class="fa fa-paper-plane-o"></span> Contact MSDC <img id="loading" alt="Loading" src="img/loader/loading.gif" />
+			</button>
+			<div class="alert alert-danger" id="error-alert" style="display: none;">
+			</div>
+			<div class="alert alert-success" id="success-alert" style="display: none;">
+			</div>
+		</section>
+	</form>
+</section>
