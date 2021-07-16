@@ -19,11 +19,11 @@ const transport = nodemailer.createTransport({
 });
 
 // Use the defined transport object to send an email.
-const sendEmail = (name, email, phone, subject, message, callback) => {
+const sendEmail = (email, subject, message, callback) => {
     // Store all mail options in an object.
     const mailOptions = {
         from: process.env.MAIL_USER,
-        to: email,
+        to: "web@localhost.io",
         subject: subject,
         html: message
     };

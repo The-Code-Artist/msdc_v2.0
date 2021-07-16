@@ -14,7 +14,7 @@
     var subjectError = $('#subject-validation');
     var messageError = $('#message-validation');
     //
-    // TODO: Declare the validation enforcement variable,
+    // TODO: Declare the validation enforcement variable.
     var isValid = false;
     //
     // TODO: Process the form and send a request to the server once validated.
@@ -22,8 +22,13 @@
         e.preventDefault();
         // TODO: Call the external service.
         var url = "/contact";
-        var formData = (window.FormData) ? new FormData(this) : null;
-        var fData = (formData !== null) ? formData : $form.serialize();
+        var formData = {
+          name: nameTextBox.val(),
+          email: emailTextBox.val(),
+          phone: phoneTextBox.val(),
+          subject: subjectTextBox.val(),
+          message: messageTextArea.val(),
+        };
         //
         $('#submit-btn').attr("disabled", true);
         // TODO: Show the AJAX loader.
@@ -41,9 +46,8 @@
             $.ajax({
                 type: "POST",
                 url: url,
-                data: fData,
-                processData: false,
-                contentType: false,
+                data: JSON.stringify(formData),
+                contentType: "application/json",
                 success: function (data) {
                     $('#loading').fadeOut();
                     if (data.msg != "Your message has successfully been sent to MSDC Inc (Pty) Ltd.") {
@@ -69,8 +73,8 @@
                     }
                     $('#submit-btn').attr("disabled", false);
                 },
-                error: function () {
-                    $('#error-alert').html("<p>There was an error processing your request.</p>");
+                error: function (data) {
+                    $('#error-alert').html(`<p>${data}</p>`);
                     $('#error-alert').fadeIn();
                     $('#loading').fadeOut();
                 }
