@@ -9,9 +9,9 @@ const auth = {
 
 // Define a transport for sending emails.
 const transport = nodemailer.createTransport({
-    host: "localhost",
-    port: 25,
-    secure: false,
+    host: "mail.msdc.africa",
+    port: 465,
+    secure: true,
     auth: {
         user: auth.username,
         pass: auth.password
@@ -23,7 +23,7 @@ const sendEmail = (email, subject, message, callback) => {
     // Store all mail options in an object.
     const mailOptions = {
         from: process.env.MAIL_USER,
-        to: "web@localhost.io",
+        to: "help.me@msdc.africa",
         subject: subject,
         html: message
     };

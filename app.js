@@ -37,4 +37,4 @@ app.get("/terms", (req, res) => {
 app.use("/contact", contactRoute);
 
 // Run the HTTP server.
-app.listen(port, () => { console.info(`App is running and listening at port: ${port} & DB_USER: ${process.env.DB_USER}`) });
+app.listen(port, () => { console.info(`App is running and listening at port: ${port}.`) });
