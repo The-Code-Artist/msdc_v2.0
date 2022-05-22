@@ -13,7 +13,7 @@ app.use("/css", express.static(`${__dirname}/public/css`));
 app.use("/img", express.static(`${__dirname}/public/img`));
 app.use("/js", express.static(`${__dirname}/public/js`));
 
-// Templating engine configuration.
+// Template engine configuration.
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 app.set("layout", `${__dirname}/src/views/layouts/layout`);
