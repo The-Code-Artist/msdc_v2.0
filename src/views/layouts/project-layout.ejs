@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-za">
+  <!-- HEAD SECTION -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="" />
+    <link rel="shortcut icon" href="img/element.ico" />
+    <title>
+      <% if (title != "") { %> <%- title %> - MSDC Inc. <% } else { %> MSDC Inc. <% } %>
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/site.min.css" rel="stylesheet" />
+    <!-- Parallax CSS -->
+    <link rel="stylesheet" href="css/gallery.min.css" />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <link rel="stylesheet" href="css/parallax.min.css" />
+    <script src="https://use.fontawesome.com/66103fc3a5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+  <!-- BODY -->
+  <body>
+    <!-- NAVBAR -->
+    <section class="navbar navbar-default navbar-fixed-top">
+      <!-- NAVBAR CONTAINER -->
+      <section class="container">
+        <section class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">
+            <img src="img/logos/logo.png" alt="MSDC Inc (Pty) Ltd" width="100" />
+          </a>
+        </section>
+        <!-- COLLAPSABLE NAVBAR -->
+        <section class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right list-unstyled">
+            <li>
+              <a href="./">Home</a>
+            </li>
+            <li>
+              <a href="./services"> Services </a>
+            </li>
+            <li>
+              <a href="./portfolio"> Portfolio </a>
+            </li>
+            <li>
+              <a href="./contact"> Contact </a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <!-- SITE CONTENT -->
+    <section id="body">
+      <%- body %>
+      <!-- BACK TO TOP BUTTON -->
+      <a id="back-to-top" class="btn btn-danger back-to-top" role="button">
+        <span class="fa fa-chevron-up"></span>
+      </a>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer-inverse">
+      <section class="container-fluid text-center">
+        <!-- SOCIAL ICONS -->
+        <ul class="list-inline =" style="font-size: 15pt">
+          <li>
+            <a href="https://www.behance.net/MSDCInc" target="_blank" class="faa-shake animated"
+              ><i class="fa fa-behance"></i
+            ></a>
+          </li>
+          <li></li>
+          <li>
+            <a href="https://www.linkedin.com/company/18037125/" target="_blank"
+              ><i class="fa fa-linkedin-square"></i
+            ></a>
+          </li>
+          <li></li>
+          <!--<li>
+					<a href="https://www.facebook.com/MsdcInc/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+				</li>
+				<li></li>-->
+          <li>
+            <a href="mailto:help.me@msdc.africa"><i class="fa fa-send"></i></a>
+          </li>
+        </ul>
+        <!-- LINKS -->
+        <p>
+          <a href="./services">Services</a> | <a href="./terms">Terms</a> |
+          <a href="./contact">Contact</a>
+          <a href="./portfolio">Portfolio</a>
+        </p>
+        <p>
+          Site By: <strong>MSDC Inc (Pty) Ltd &copy;</strong>
+          <script></script>
+        </p>
+      </section>
+      <section class="footer-default container-fluid">
+        <p class="text-center">
+          <img src="img/MSFD-Element.png" style="max-width: 55px" />
+        </p>
+      </section>
+    </footer>
+    <!-- JQUERY CDN -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JQUERY UI CDN -->
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <!-- BOOTSTRAP -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- PICTURE TABS -->
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName('mySlides');
+        var dots = document.getElementsByClassName('demo');
+        var captionText = document.getElementById('caption');
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(' active', '');
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].className += ' active';
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+      $(document).ready(showSlides(n));
+    </script>
+
+    <!-- LIGHTBOX -->
+    <script type="text/javascript">
+      // Open the modal...
+      function zoomImage() {
+        document.getElementById('gallery-modal').style.display = 'block';
+      }
+
+      // Close the Modal...
+      function closeModal() {
+        document.getElementById('gallery-modal').style.display = 'none';
+      }
+
+      // Set the slideIndex appropriately...
+      var slideIndex = 1;
+      showImage(slideIndex);
+
+      // Navigate the Images...
+      function navigate(n) {
+        showImage((slideIndex += n));
+      }
+
+      // Stay on the current slide...
+      function currentImage(n) {
+        showImage((slideIndex = n));
+      }
+
+      // Main Lightbox Mechanism...
+      function showImage(n) {
+        var i;
+        var slides = document.getElementsByClassName('zoom-image');
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        // Loop through the slides
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        slides[slideIndex - 1].style.display = 'block';
+      }
+
+      // Detect pressed keys and act accordingly.
+      document.onkeydown = checkKey;
+
+      // Navigates the gallery or closes the modal.
+      function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == 37) {
+          navigate(-1);
+        } else if (e.keyCode == 39) {
+          navigate(+1);
+        } else if (e.keyCode == 27 || e.keyCode == 32) {
+          closeModal();
+        }
+      }
+      $('.zoom-image').on('swipeleft', navigate(-1));
+      $('.zoom-image').on('swiperight', navigate(+1));
+    </script>
+
+    <!-- BACK TO TOP SCRIPT -->
+    <script type="text/javascript" async="async">
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $('#back-to-top').fadeIn();
+          } else {
+            $('#back-to-top').fadeOut();
+          }
+        });
+        // TODO: SCROLL TO TOP OF PAGE WHEN CLICKED.
+        $('#back-to-top').click(function () {
+          $('body,html').animate(
+            {
+              scrollTop: 0,
+            },
+            2000
+          );
+          return false;
+        });
+      });
+    </script>
+
+    <!-- ANTI-RC -->
+    <script src="js/right-click-prevent.js" async="async"></script>
+    <script src="js/header-parallax.min.js" type="text/javascript"></script>
+  </body>
+</html>
