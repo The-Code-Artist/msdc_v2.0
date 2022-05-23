@@ -189,8 +189,8 @@ Check them out on their website for more info...`,
     },
     {
       id: 7,
-      title: '',
-      slug: '',
+      title: 'West Rand Youth Development Website',
+      slug: 'west-rand-youth-development',
       brief:
         `Who are West Rand Youth Development?
         
