@@ -1,0 +1,91 @@
+<div class="container-fluid sect" id="page-content" style="min-height: 92vh">
+  <div class="container" style="padding: 1rem">
+    <!-- IMAGE CONTAINER -->
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="gal-content" style="margin-left: 1.5rem !important">
+        <% if (project !== null) { %> <% thumbs.forEach(function (thumb, idx) { %>
+        <img
+          class="mySlides img-responsive"
+          alt="<%- thumb.alt %>"
+          title="<%- thumb.alt %>"
+          src="<%- thumb.src %>"
+          onclick="zoomImage(); currentImage('<%= idx + 1 %>')"
+          height="500"
+        />
+        <% }) %>
+        <br />
+        <div class="galColumn text-center" style="margin-left: auto; margin-right: auto">
+          <% thumbs.forEach((thumb, idx) => { %>
+          <a href="#" style="text-decoration: none !important">
+            <img
+              class="demo cursor"
+              alt="<%- thumb.alt %>"
+              src="<%- thumb.src %>"
+              onclick="currentSlide('<%= idx + 1 %>')"
+            />
+          </a>
+          <%}) %>
+        </div>
+        <%}%>
+      </div>
+    </div>
+
+    <!-- PROJECT DETAILS -->
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="thumbnail" id="brief">
+        <h3>
+          <strong> <%- project.title %> </strong>
+        </h3>
+
+        <hr />
+        <p><%= project.brief %></p>
+        <% if (project.link !== '') { %>
+        <a href="<%- project.link %>" target="_blank"> <%- project.link %> </a>
+        <%}%>
+      </div>
+    </div>
+
+    <!-- GALLERY MODAL -->
+    <div
+      id="gallery-modal"
+      class="modal col-lg-12 col-md-12 col-sm-12 col-xs-12"
+      style="overflow: hidden"
+    >
+      <!-- CLOSE BUTTON -->
+      <a
+        class="close cursor btn btn-link"
+        onclick="closeModal()"
+        style="margin-top: 0.2rem; font-size: 48pt; z-index: 9999"
+      >
+        <p>&times;</p>
+      </a>
+
+      <!-- MODAL BODY -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="image-content" style="top: -10px; max-width: 85%">
+          <!-- MODAL IMAGE -->
+          <% thumbs.forEach(function(thumb, idx) { %>
+          <div class="zoom-image">
+            <img
+              alt="<%- thumb.alt %>"
+              src="<%- thumb.src %>"
+              id="modal-image"
+              class="img-responsive"
+            />
+          </div>
+          <%}) %>
+        </div>
+
+        <!-- IMAGE SWITCHING ARROWS -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="top: -0.4rem">
+          <p>
+            <a class="prev btn btn-round" onclick="navigate(-1)"> &larr; </a>
+            &nbsp;
+            <a class="next btn btn-round" onclick="navigate(1)"> &rarr; </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/GALLERY MODAL-->
+  </div>
+</div>

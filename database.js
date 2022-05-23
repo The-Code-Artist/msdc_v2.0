@@ -395,4 +395,4 @@ The Black introduces power and elegance which is true to what the brand entails 
   ],
 };
 
-export default database;
+module.exports = database;
