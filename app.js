@@ -20,23 +20,24 @@ app.set('layout', `${__dirname}/src/views/layouts/layout`);
 
 // Routes.
 const contactRoute = require('./src/routes/contact');
+const portfolioRoute = require('./src/routes/portfolio');
 const projectRoute = require('./src/routes/project');
 
-// HTTP Request processing.
-app.get('', (req, res) => {
+// Routes.
+app.get('', (_, res) => {
   res.render('index', { title: '' });
 });
 
-app.get('/services', (req, res) => {
+app.get('/services', (_, res) => {
   res.render('services', { title: 'Services' });
 });
 
-app.get('/terms', (req, res) => {
+app.get('/terms', (_, res) => {
   res.render('terms', { title: 'Terms', layout: './layouts/cardless-layout' });
 });
 
 app.use('/contact', contactRoute);
-
+app.use('/portfolio', portfolioRoute);
 app.use('/project', projectRoute);
 
 // Run the HTTP server.

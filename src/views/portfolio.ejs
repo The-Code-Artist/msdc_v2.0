@@ -1,0 +1,75 @@
+<!-- PARALLAX HERO -->
+<header id="img-projects" class="parallax"></header>
+
+<section class="container text-center">
+  <h1>Project Portfolio</h1>
+  <hr />
+
+  <!-- NAV TABS -->
+  <ul class="nav nav-tabs text-center" role="tablist">
+    <li role="presentation" class="active"><a href="#graphic" aria-controls="graphic" role="tab" data-toggle="tab">Graphic Design</a></li>
+    <li role="presentation"><a href="#web" aria-controls="web" role="tab" data-toggle="tab">Web Development</a></li>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="graphic">
+      <%if (graphicProjects.length > 0) {%>
+    <div class="row">
+      <div id="projects" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <% graphicProjects.forEach((project, index) => { %>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding: 1rem">
+          <a href="<%- `./project/${project.slug}` %>">
+            <img
+              src="<%- project.thumbs[0].src %>"
+              alt="<%- project.thumbs[0].alt %>"
+              class="proj img-responsive"
+              style="
+                max-height: 192px;
+                min-height: 192px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0.8em;
+                padding: 0.6em;
+              "
+            />
+          </a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <%}%>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="web">
+      <%if (webProjects.length > 0) {%>
+    <div class="row">
+      <div id="projects" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <% webProjects.forEach((project, index) => { %>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding: 1rem">
+          <a href="<%- `./project/${project.slug}` %>">
+            <img
+              src="<%- project.thumbs[0].src %>"
+              alt="<%- project.thumbs[0].alt %>"
+              class="proj img-responsive"
+              style="
+                max-height: 192px;
+                min-height: 192px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0.8em;
+                padding: 0.6em;
+              "
+            />
+          </a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <%}%>
+    </div>
+  </div>
+
+</div>
+
+    
+  </div>
+</section>

@@ -68,7 +68,7 @@ Simple, everyone involved must not leave empty handed a skill that can help one 
     {
       id: 3,
       title: 'Raphushana Raffle Website',
-      slug: '',
+      slug: 'raphushana-raffle',
       brief:
         `What is the Raphushana Raffle?
 
@@ -308,7 +308,7 @@ generated draw utilizing a random algorithm and will be notified by SMS.`,
 We loved the concept highly and since it’s a family business we had to add a circle to the logo with would clearly symbolize that. Fusing the lion and the bike was really tricky but once we had pulled it off and the client loved it we were over the moon about the response from the client.`,
       thumbs: [
         {
-          src: '/img/projects/66 Garage Logo/1.jpg',
+          src: '/img/projects/66 Garage Logo/1.png',
           alt: 'Standalone Logo',
         },
         {
@@ -373,19 +373,19 @@ Our mix of fashion forward and basic core items fulfil the desires and needs of 
 The Black introduces power and elegance which is true to what the brand entails to bring out with the products, while the gold brings energy and innovation because this brand is always evolving.`,
       thumbs: [
         {
-          src: '/img/projects/ToVch Corporate ID/1.jpg',
+          src: '/img/projects/ToVch Ltd Corporate ID/1.jpg',
           alt: 'Full CID',
         },
         {
-          src: '/img/projects/ToVch Corporate ID/2.jpg',
+          src: '/img/projects/ToVch Ltd Corporate ID/2.jpg',
           alt: 'Business Card Mock-up',
         },
         {
-          src: '/img/projects/ToVch Corporate ID/3.jpg',
+          src: '/img/projects/ToVch Ltd Corporate ID/3.jpg',
           alt: 'Letterhead Mock-up',
         },
         {
-          src: '/img/projects/ToVch Corporate ID/4.jpg',
+          src: '/img/projects/ToVch Ltd Corporate ID/4.jpg',
           alt: 'Company Profile Mock-up',
         },
       ],
